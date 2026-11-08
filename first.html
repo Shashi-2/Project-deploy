@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kashi's Game</title>
+    <style>
+        body {
+            text-align: center;
+            background: lightblue;
+            font-family: Arial;
+        }
+        h1 { color: darkblue; }
+        button {
+            padding: 12px 25px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎮 Kashi's Game</h1>
+    <h2>Guess the Number!</h2>
+
+    <p>Guess a number between 1 and 10</p>
+    <input type="number" id="guess">
+    <button onclick="play()">Play</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function play() {
+            let num = Math.floor(Math.random() * 10) + 1;
+            let guess = document.getElementById("guess").value;
+
+            if (guess == num) {
+                document.getElementById("result").innerHTML =
+                    "🎉 You Win! Kashi!";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Try Again! Number was " + num;
+            }
+        }
+    </script>
+
+</body>
+</html>
